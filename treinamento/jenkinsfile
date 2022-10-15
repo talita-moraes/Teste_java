@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'https://github.com/talita-moraes/Teste_java.git'
-                sh './mvn clean compolie'
             }
         }
         stage('Test') {
