@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'https://github.com/talita-moraes/Teste_java.git'
+                sh './mvn clean compolie'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './mvn clean test'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'build/reports/**/*.xml'
+        }
+    }
+}
