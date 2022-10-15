@@ -3,6 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
                 sh 'https://github.com/talita-moraes/Teste_java.git'
                 sh './mvn clean compolie'
             }
@@ -11,13 +16,6 @@ pipeline {
             steps {
                 sh './mvn test'
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-            junit 'build/reports/**/*.xml'
         }
     }
 }
