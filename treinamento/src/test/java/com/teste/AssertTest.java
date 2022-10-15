@@ -41,7 +41,4 @@ public class AssertTest {
 	public void testAssertNull() {
 		assertNull(null);
 	}
-
-	
-
 }

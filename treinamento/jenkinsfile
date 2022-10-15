@@ -3,18 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
-              
+                sh 'https://github.com/talita-moraes/Teste_java.git'
+                sh './mvn clean compolie'
             }
         }
         stage('Test') {
             steps {
-    
-                sh 'echo "Hello World"'
+                sh 'Iniciar os testes"'
+                sh './mvn test'
             }
         }
     }
