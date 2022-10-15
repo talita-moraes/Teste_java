@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'Iniciar os testes"'
+                sh 'echo "Hello World"'
                 sh './mvn test'
             }
         }
