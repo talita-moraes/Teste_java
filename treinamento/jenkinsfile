@@ -8,13 +8,12 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'https://github.com/talita-moraes/Teste_java.git'
-                sh './mvn clean compolie'
+              
             }
         }
         stage('Test') {
             steps {
-                sh './mvn test'
+    
                 sh 'echo "Hello World"'
             }
         }
