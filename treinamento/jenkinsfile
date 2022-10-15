@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                sh 'https://github.com/talita-moraes/Teste_java.git'
-            }
-        }
         stage('Test') {
             steps {
                 sh 'Iniciar os testes"'
