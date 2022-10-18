@@ -18,7 +18,7 @@ public class AssertTest {
 	}
 	
 	@Test
-	public void testAssertFalse() {
+	public void testAssertF() {
 		assertEquals("t", "text");
 	}
 
